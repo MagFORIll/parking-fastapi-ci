@@ -16,9 +16,7 @@ class ClientFactory(factory.alchemy.SQLAlchemyModelFactory):
     name = factory.LazyAttribute(lambda _: fake.first_name())
     surname = factory.LazyAttribute(lambda _: fake.last_name())
     credit_card = factory.LazyAttribute(
-        lambda _: fake.credit_card_number(
-            card_type=None
-        ) if fake.boolean() else None
+        lambda _: fake.credit_card_number(card_type=None) if fake.boolean() else None
     )
     car_number = factory.LazyAttribute(lambda _: fake.license_plate())
 
@@ -31,7 +29,5 @@ class ParkingFactory(factory.alchemy.SQLAlchemyModelFactory):
 
     address = factory.LazyAttribute(lambda _: fake.address())
     opened = factory.LazyAttribute(lambda _: fake.boolean())
-    count_places = factory.LazyAttribute(
-        lambda _: fake.random_int(min=5, max=50)
-    )
+    count_places = factory.LazyAttribute(lambda _: fake.random_int(min=5, max=50))
     count_available_places = factory.LazyAttribute(lambda o: o.count_places)

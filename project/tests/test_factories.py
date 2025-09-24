@@ -1,6 +1,5 @@
 # tests/test_factories.py
 from project.factories import ClientFactory, ParkingFactory
-
 from project.models import Client, Parking
 
 
