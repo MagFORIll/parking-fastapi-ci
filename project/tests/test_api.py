@@ -23,6 +23,8 @@ def test_create_client(client):
 
 
 def test_create_parking(client):
-    resp = client.post("/parkings", json={"address": "Center", "count_places": 10})
+    resp = client.post(
+        "/parkings", json={"address": "Center", "count_places": 10}
+    )
     assert resp.status_code == 201
     assert resp.get_json()["count_available_places"] == 10

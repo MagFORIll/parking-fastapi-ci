@@ -26,7 +26,7 @@ class Parking(db.Model):  # type: ignore
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 
-class ClientParking(db.Model): # type: ignore
+class ClientParking(db.Model):  # type: ignore
     __tablename__ = "client_parking"
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"))
