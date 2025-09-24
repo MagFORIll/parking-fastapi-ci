@@ -4,6 +4,7 @@ sqlalchemy
 pytest
 pytest-asyncio
 factory-boy
+flask
 faker
 flake8
 black
